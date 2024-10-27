@@ -1,0 +1,403 @@
+/* Reset básico */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+    --primary-color: #8bffff; /* Color turquesa */
+    --dark-primary-color: #00b3b3; /* Color más oscuro */
+    --background-color: #f9f9f9; /* Fondo gris claro */
+    --text-color: #333; /* Color del texto */
+    --light-text-color: #666; /* Color para texto más claro */
+    --white: #fff; /* Color blanco */
+    --shadow-color: rgba(0, 0, 0, 0.1); /* Color de sombra */
+}
+
+/* Estilos globales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f0f0f0;
+    color: var(--text-color);
+}
+
+/* Cabecera */
+header.dynamic-header {
+    background-color: var(--white);
+    color: black;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px var(--shadow-color);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+header a {
+    text-decoration: none;
+}
+
+header img {
+    width: 120px;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+}
+
+.navbar ul li {
+    margin-left: 20px;
+}
+
+.navbar ul li a {
+    color: #000;
+    padding: 10px 20px;
+    border: 2px solid transparent;
+    border-radius: 30px;
+    transition: all 0.8s ease;
+    background-color: transparent;
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: 0.5px;
+}
+
+.navbar ul li a:hover {
+    color: #000;
+    border: 2px solid var(--primary-color);
+    background-color: var(--primary-color);
+}
+
+/* Header sticky al hacer scroll */
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Estilos para la sección de "inicio" */
+#inicio {
+    position: relative;
+    height: 100vh;
+    background: url('Black\ Red\ Modern\ Outer\ Space\ Presentation.png') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#inicio .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+#inicio .content {
+    position: relative;
+    z-index: 2;
+    color: rgb(255, 252, 252);
+}
+
+#inicio h1 {
+    font-size: 48px;
+    margin: 0;
+    margin-top: -220px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+#inicio p {
+    font-size: 24px;
+    margin-top: 10px;
+    font-weight: lighter;
+    line-height: 1.5;
+}
+
+#inicio .btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 24px;
+    font-size: 18px;
+    color: black;
+    background-color: var(--primary-color);
+    text-decoration: none;
+    border-radius: 35px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#inicio .btn:hover {
+    background-color: var(--dark-primary-color);
+    transform: scale(1.05);
+}
+
+/* Estilos para la sección de servicios */
+#servicios {
+    padding: 60px 20px;
+    background-color: var(--background-color);
+    position: relative;
+}
+
+#servicios h1 {
+    font-size: 40px;
+    font-weight: 800;
+    color: var(--text-color);
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* Contenedor de las tarjetas */
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Estilo de las tarjetas */
+.card {
+    background-color: var(--white);
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    padding: 20px;
+    width: calc(33% - 20px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: var(--text-color);
+}
+
+.card p {
+    font-size: 16px;
+    color: var(--light-text-color);
+    line-height: 1.5;
+}
+
+/* Botones en la sección de servicios */
+.card .btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 24px;
+    font-size: 18px;
+    color: black;
+    background-color: rgba(158, 241, 241, 0.7); /* Color turquesa más suave */
+    text-decoration: none;
+    border-radius: 35px;
+    border: 2px solid rgba(184, 255, 255, 0.7); /* Color más oscuro más suave */
+    transition: background-color 0.3s ease, transform 0.3s ease, border-color 0.3s ease; /* Agregar borde a la transición */
+}
+
+.card .btn:hover {
+    background-color: rgba(0, 179, 179, 0.9); /* Color más oscuro más suave */
+    transform: scale(1.05);
+    border-color: rgba(0, 0, 0, 0.7); /* Cambiar el color del borde al hacer hover a un tono más suave */
+}
+
+
+/* Estilos para la sección de contacto */
+#contacto {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--background-color);
+    overflow: hidden;
+}
+
+.contact-wrapper {
+    display: flex;
+    width: 100%;
+    max-width: 1250px;
+    height: 80%;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    overflow: hidden;
+    background-color: var(--white);
+    margin: auto;
+    padding: 20px;
+    position: relative;
+    top: 5%;
+}
+
+.contact-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-form {
+    flex: 1;
+    padding: 20px;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+.contact-form h2 {
+    font-size: 24px;
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #555;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: var(--dark-primary-color);
+    transform: scale(1.05);
+}
+
+/* Pie de página */
+.footer {
+    background-color: var(--white);
+    color: #000;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-col {
+    flex: 1;
+    margin: 0 10px;
+}
+
+.footer-col h3 {
+    margin-bottom: 10px;
+}
+
+.footer-col p,
+.footer-col ul,
+.footer-col form {
+    margin: 0;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin: 5px 0;
+}
+
+.footer-col ul li a {
+    color: #000;
+    text-decoration: none;
+}
+
+.footer-col ul li a:hover {
+    color: var(--dark-primary-color);
+    text-decoration: underline;
+}
+
+.social-links {
+    margin-top: 10px;
+}
+
+.social-icon {
+    color: #000;
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 24px;
+}
+
+.social-icon:hover {
+    color: var(--dark-primary-color);
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.footer-bottom a {
+    color: #000;
+    text-decoration: none;
+}
+
+.footer-bottom a:hover {
+    color: var(--dark-primary-color);
+    text-decoration: underline;
+}
+
+/* Botón de WhatsApp */
+.whatsapp-button {
+    position: fixed;
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25D366;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    font-size: 30px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.whatsapp-button:hover {
+    background-color: #128C7E;
+    transform: scale(1.1);
+}
